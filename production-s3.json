@@ -1,0 +1,50 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::lemonilo",
+            "Condition": {
+                "ForAnyValue:IpAddress": {
+                    "aws:SourceIp": [
+                        "11.11.11.11/32",
+                        "22.22.22.22/32"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::lemonilo/*",
+            "Condition": {
+                "ForAnyValue:IpAddress": {
+                    "aws:SourceIp": [
+                        "11.11.11.11/32",
+                        "22.22.22.22/32"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "s3:HeadBucket",
+            "Resource": "arn:aws:s3:::lemonilo/*",
+            "Condition": {
+                "ForAnyValue:IpAddress": {
+                    "aws:SourceIp": [
+                        "11.11.11.11/32",
+                        "22.22.22.22/32"
+                    ]
+                }
+            }
+        }
+    ]
+}
