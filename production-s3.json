@@ -5,7 +5,7 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::lemonilo",
+            "Resource": "arn:aws:s3:::zeus-cloud",
             "Condition": {
                 "ForAnyValue:IpAddress": {
                     "aws:SourceIp": [
@@ -22,7 +22,7 @@
                 "s3:PutObject",
                 "s3:GetObject"
             ],
-            "Resource": "arn:aws:s3:::lemonilo/*",
+            "Resource": "arn:aws:s3:::zeus-cloud/*",
             "Condition": {
                 "ForAnyValue:IpAddress": {
                     "aws:SourceIp": [
@@ -36,7 +36,7 @@
             "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": "s3:HeadBucket",
-            "Resource": "arn:aws:s3:::lemonilo/*",
+            "Resource": "arn:aws:s3:::zeus-cloud/*",
             "Condition": {
                 "ForAnyValue:IpAddress": {
                     "aws:SourceIp": [
